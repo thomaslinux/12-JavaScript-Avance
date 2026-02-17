@@ -1,0 +1,23 @@
+body {
+    display: flex;
+    flex-direction: column;
+     justify-content: center;
+     align-content: center;
+    width: 480px;
+    text-align: center;
+    position:relative;
+}
+
+button {
+
+    background-color: #a8a69e;
+    margin-top: 1rem;
+    /*border-radius: 5px;*/
+    color: white;
+    padding: 0.5rem 1rem;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    /*border-radius: 8px;*/
+    ;
+}

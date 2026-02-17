@@ -15,7 +15,8 @@ export class Quiz {
     }
 
     displayResult() {
-        document.getElementById('quiz').innerHTML = `<p>Score : ${this.score}/${this.questions.length}</p>`
+        document.getElementById('quiz').innerHTML = 
+            `<p>Score : ${this.score}/${this.questions.length}</p>`
 
     }
 

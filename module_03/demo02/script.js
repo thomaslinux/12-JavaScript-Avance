@@ -1,5 +1,5 @@
 fetch("https://hp-api.onrender.com/api/characters")
-    .then((httpResponse) => httpResponse.text())
+    .then((httpResponse) => httpResponse.json())
     .then((data) => {
-        console.log(JSON.parse(data));
+        console.log(data);
     })

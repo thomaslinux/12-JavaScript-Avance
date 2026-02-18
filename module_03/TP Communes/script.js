@@ -2,7 +2,6 @@ const HTML_departement = document.getElementById('departement');
 const HTML_commune = document.getElementById('commune');
 const HTML_COMMUNE_EMPTY = HTML_commune.innerHTML;
 const HTML_info_communes = document.getElementById("info_communes");
-// let listes_departements = [];
 let listes_communes = [];
 
 async function displayAllCommunes() {
@@ -58,9 +57,9 @@ async function displayDepartements() {
 
 async function displayCommunesOfDepartement() {
     let codeDepartement = document.querySelector("#departement").value;
-    console.log(codeDepartement);
+    // console.log(codeDepartement);
     let data = await getCommunesOfDepartement(codeDepartement);
-    console.log(data)
+    // console.log(data)
     HTML_commune.innerHTML = HTML_COMMUNE_EMPTY;
     for(const commune of data) {
         const option = document.createElement("option");
@@ -74,9 +73,10 @@ async function displayCommunesOfDepartement() {
 async function displayInfoCommune() {
     for (const commune of listes_communes) {
         if (commune.code === HTML_commune.value) {
-            const p = document.createElement("p");
-            p.innerText = `Nom : ${commune.nom}, Population : ${commune.population}, CP : ${commune.code}`
-            HTML_info_communes.append(p)
+            const div = document.createElement("div");
+            div.id = commune.code;
+            div.innerText = `Nom : ${commune.nom}, Population : ${commune.population}, CP : ${commune.code}`
+            HTML_info_communes.append(div)
         }
     }
 

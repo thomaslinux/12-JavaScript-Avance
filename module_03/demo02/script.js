@@ -12,9 +12,14 @@ fetch("https://hp-api.onrender.com/api/characters", {method : 'GET'})
             const p = document.createElement("p");
             p.innerText = character.name;
             const img = document.createElement("img");
+            if (character.image) {
+
             img.src = character.image;
-            img.style.height = "240px"
-            img.style.width = "480px"
+            img.alt = "image de " + character.name
+            } else {
+                img.src = "https://http.cat/images/404.jpg"
+                img.alt = "image non trouvée"
+            }
 
             const div = document.createElement("div");
             div.id = character.name;

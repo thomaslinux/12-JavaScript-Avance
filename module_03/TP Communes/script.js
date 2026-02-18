@@ -1,19 +1,11 @@
 const HTML_departement = document.getElementById('departement');
 const HTML_commune = document.getElementById('commune');
 const HTML_COMMUNE_EMPTY = HTML_commune.innerHTML;
-
-async function getAllCommunes() {
-    let httpResponse = await fetch("https://geo.api.gouv.fr/communes", {method: 'GET'})
-
-    if(httpResponse.status === 200 && httpResponse.ok) {
-        return httpResponse.json();
-    } else {
-        // gestion des erreurs
-    }
-}
+const HTML_info_communes = document.getElementById("info_communes");
+let listes_communes = [];
 
 async function displayAllCommunes() {
-    let data = await getAllCommunes();
+    let data = await callApi("https://geo.api.gouv.fr/communes");
     console.log(data);
     for(const communes of data) {
         const p = document.createElement("p");
@@ -26,17 +18,24 @@ async function displayAllCommunes() {
     }
 
 }
-// displayAllCommunes();
 
-async function getDepartements() {
-    let httpResponse = await fetch("https://geo.api.gouv.fr/departements")
-    if(httpResponse.status === 200 && httpResponse.ok) {
+async function callApi(url) {
+    let httpResponse = await fetch(url);
+
+    if (httpResponse.status === 200 && httpResponse.ok) {
         return httpResponse.json();
     }
 }
 
+// callApi("https://geo.api.gouv.fr/communes")
+
+// callApi("https://geo.api.gouv.fr/departements")
+
+// callApi(`https://geo.api.gouv.fr/departements/${codeDepartement}/communes`)
+
+
 async function displayDepartements() {
-    let data = await getDepartements();
+    let data = await callApi("https://geo.api.gouv.fr/departements");
     console.log(data);
     for(const departement of data) {
         const option = document.createElement("option");
@@ -47,14 +46,10 @@ async function displayDepartements() {
     HTML_departement.value = "empty";
 }
 
-displayDepartements();
-
-HTML_departement.addEventListener("change", displayCommunesOfDepartement)
-
 async function displayCommunesOfDepartement() {
     let codeDepartement = document.querySelector("#departement").value;
     console.log(codeDepartement);
-    let data = await getCommunesOfDepartement(codeDepartement);
+    let data = await callApi(`https://geo.api.gouv.fr/departements/${codeDepartement}/communes`);
     HTML_commune.innerHTML = HTML_COMMUNE_EMPTY;
     for(const commune of data) {
         const option = document.createElement("option");
@@ -62,18 +57,30 @@ async function displayCommunesOfDepartement() {
         option.value=commune.code;
         HTML_commune.append(option);
     }
-
+    listes_communes = data;
 }
 
-async function getCommunesOfDepartement(codeDepartement) {
-    const lien = `https://geo.api.gouv.fr/departements/${codeDepartement}/communes`
-    let httpResponse = await fetch(lien);
 
-    if (httpResponse.status === 200 && httpResponse.ok) {
-        return httpResponse.json();
+// affiche les infos de la commune, l'élement du table qui contient pas le code département
+async function displayInfoCommune() {
+    // console.log(HTML_commune.value)
+    for (const commune of listes_communes) {
+        if (commune.code === HTML_commune.value) {
+            const p = document.createElement("p");
+            p.innerText = `Nom : ${commune.nom}, Population : ${commune.population}, CP : ${commune.code}`
+            HTML_info_communes.append(p)
+        }
     }
+
 }
 
+function init() {
+    HTML_commune.addEventListener("change", displayInfoCommune);
+    displayDepartements();
+    HTML_departement.addEventListener("change", displayCommunesOfDepartement);
+}
+
+window.onload = init;
 
     // .then((httpResponse) => httpResponse.json())
     // .then((data) => {

@@ -1,0 +1,4 @@
+### GET request to example server
+GET https://hp-api.onrender.com/api/characters
+
+###

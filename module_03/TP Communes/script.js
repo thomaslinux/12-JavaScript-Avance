@@ -75,7 +75,18 @@ async function displayInfoCommune() {
         if (commune.code === HTML_commune.value) {
             const div = document.createElement("div");
             div.id = commune.code;
-            div.innerText = `Nom : ${commune.nom}, Population : ${commune.population}, CP : ${commune.code}`
+            // https://stackoverflow.com/questions/14379274/how-to-iterate-over-a-javascript-object
+            for (let key in commune) {
+                // console.log(key, commune[key]);
+                const label = document.createElement("label")
+                // label.setAttribute("for",key);
+                label.innerText = key + " : ";
+                const p = document.createElement("p")
+                p.innerText = commune[key];
+                div.append(label);
+                div.append(p);
+            }
+            // div.innerText = `Nom : ${commune.nom}, Population : ${commune.population}, CP : ${commune.code}`
             HTML_info_communes.append(div)
         }
     }

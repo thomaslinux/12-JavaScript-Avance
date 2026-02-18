@@ -10,7 +10,34 @@ async function getHarryPotterData() {
     }
 }
 
-getHarryPotterData();
+async function displayHarryPotterData() {
+    let data = await getHarryPotterData();
+    console.log(data);
+
+    for(const character of data) {
+        const p = document.createElement("p");
+        p.innerText = character.name;
+        const img = document.createElement("img");
+        if (character.image) {
+
+            img.src = character.image;
+            img.alt = "image de " + character.name
+        } else {
+            img.src = "https://http.cat/images/404.jpg"
+            img.alt = "image non trouvée"
+        }
+
+        const div = document.createElement("div");
+        div.id = character.name;
+
+        div.append(p);
+        div.append(img);
+        document.body.append(div);
+    }
+
+}
+
+displayHarryPotterData();
 
 async function getUser() {
     return 'Michel';
@@ -23,27 +50,7 @@ async function getUser() {
     //     characters = data;
     //     console.log(characters);
     //
-    //     for(const character of data) {
-    //         const p = document.createElement("p");
-    //         p.innerText = character.name;
-    //         const img = document.createElement("img");
-    //         if (character.image) {
     //
-    //         img.src = character.image;
-    //         img.alt = "image de " + character.name
-    //         } else {
-    //             img.src = "https://http.cat/images/404.jpg"
-    //             img.alt = "image non trouvée"
-    //         }
-    //
-    //         const div = document.createElement("div");
-    //         div.id = character.name;
-    //
-    //
-    //         div.append(p);
-    //         div.append(img);
-    //         document.body.append(div);
-    //     }
     // }
     // )
 

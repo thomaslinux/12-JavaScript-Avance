@@ -1,7 +1,12 @@
+let characters = [];
+
 fetch("https://hp-api.onrender.com/api/characters")
     .then((httpResponse) => httpResponse.json())
     .then((data) => {
         console.log(data);
+
+        characters = data;
+        console.log(characters);
 
         for(const character of data) {
             const p = document.createElement("p");
@@ -9,6 +14,7 @@ fetch("https://hp-api.onrender.com/api/characters")
             const img = document.createElement("img");
             img.src = character.image;
             img.style.height = "240px"
+            img.style.width = "480px"
 
             const div = document.createElement("div");
             div.id = character.name;
@@ -19,3 +25,5 @@ fetch("https://hp-api.onrender.com/api/characters")
             document.body.append(div);
         }
     })
+
+// console.log(characters);

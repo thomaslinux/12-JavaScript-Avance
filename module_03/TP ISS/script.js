@@ -10,7 +10,7 @@ setInterval( () => {
             const longitude= data.iss_position.longitude;
             HTML_latitude.innerText = latitude;
             HTML_longitude.innerText = longitude;
-            map.setView([latitude, longitude], map.getZoom());
+            map.flyTo([latitude, longitude], map.getZoom());
             marker.setLatLng([latitude, longitude]);
         })
 }, 5000)

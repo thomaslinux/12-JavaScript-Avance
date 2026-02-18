@@ -70,7 +70,6 @@ async function displayCommunesOfDepartement() {
     }
 }
 
-
 // affiche les infos de la commune, l'élement du table qui contient pas le code département
 async function displayInfoCommune() {
     for (const commune of listes_communes) {
@@ -90,16 +89,3 @@ function init() {
 }
 
 window.onload = init;
-
-    // .then((httpResponse) => httpResponse.json())
-    // .then((data) => {
-    //     console.log(data);
-    //
-    //     characters = data;
-    //     console.log(characters);
-    //
-    //
-    // }
-    // )
-
-// console.log(characters);

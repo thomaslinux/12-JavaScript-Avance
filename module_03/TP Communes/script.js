@@ -2,6 +2,7 @@ const HTML_departement = document.getElementById('departement');
 const HTML_commune = document.getElementById('commune');
 const HTML_COMMUNE_EMPTY = HTML_commune.innerHTML;
 const HTML_info_communes = document.getElementById("info_communes");
+// let listes_departements = [];
 let listes_communes = [];
 
 async function displayAllCommunes() {
@@ -9,15 +10,15 @@ async function displayAllCommunes() {
     console.log(data);
     for(const communes of data) {
         const p = document.createElement("p");
-        p.innerText = communes.nom;
+        p.innerText = `Nom : ${communes.nom}, Population : ${communes.population}, CP : ${communes.code}`
         const div = document.createElement("div");
         div.id = communes.nom;
 
         div.append(p);
         document.body.append(div);
     }
-
 }
+// displayAllCommunes()
 
 async function callApi(url) {
     let httpResponse = await fetch(url);
@@ -33,10 +34,19 @@ async function callApi(url) {
 
 // callApi(`https://geo.api.gouv.fr/departements/${codeDepartement}/communes`)
 
+async function getCommunesOfDepartement(codeDepartement) {
+    let result = [];
+    for(const commune of listes_communes) {
+        if (commune.codeDepartement == codeDepartement) {
+            result.push(commune);
+        }
+    }
+    return result;
+}
 
 async function displayDepartements() {
     let data = await callApi("https://geo.api.gouv.fr/departements");
-    console.log(data);
+    listes_communes = await callApi("https://geo.api.gouv.fr/communes");
     for(const departement of data) {
         const option = document.createElement("option");
         option.innerText=departement.code + "-" + departement.nom;
@@ -49,7 +59,8 @@ async function displayDepartements() {
 async function displayCommunesOfDepartement() {
     let codeDepartement = document.querySelector("#departement").value;
     console.log(codeDepartement);
-    let data = await callApi(`https://geo.api.gouv.fr/departements/${codeDepartement}/communes`);
+    let data = await getCommunesOfDepartement(codeDepartement);
+    console.log(data)
     HTML_commune.innerHTML = HTML_COMMUNE_EMPTY;
     for(const commune of data) {
         const option = document.createElement("option");
@@ -57,13 +68,11 @@ async function displayCommunesOfDepartement() {
         option.value=commune.code;
         HTML_commune.append(option);
     }
-    listes_communes = data;
 }
 
 
 // affiche les infos de la commune, l'élement du table qui contient pas le code département
 async function displayInfoCommune() {
-    // console.log(HTML_commune.value)
     for (const commune of listes_communes) {
         if (commune.code === HTML_commune.value) {
             const p = document.createElement("p");

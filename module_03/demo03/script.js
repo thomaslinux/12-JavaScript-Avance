@@ -2,7 +2,12 @@ let characters = [];
 
 async function getHarryPotterData() {
     let httpResponse = await fetch("https://hp-api.onrender.com/api/characters", {method: 'GET'})
-    console.log(httpResponse);
+
+    if(httpResponse.status === 200 && httpResponse.ok) {
+        return httpResponse.json();
+    } else {
+        // gestion des erreurs
+    }
 }
 
 getHarryPotterData();

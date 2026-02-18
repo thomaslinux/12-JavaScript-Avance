@@ -1,4 +1,4 @@
-let characters = [];
+const HTML_departement = document.getElementById('departement');
 
 async function getAllCommunes() {
     let httpResponse = await fetch("https://geo.api.gouv.fr/communes", {method: 'GET'})
@@ -24,8 +24,31 @@ async function displayAllCommunes() {
     }
 
 }
+// displayAllCommunes();
+
+async function getDepartements() {
+    let httpResponse = await fetch("https://geo.api.gouv.fr/departements")
+    if(httpResponse.status === 200 && httpResponse.ok) {
+        return httpResponse.json();
+    }
+}
 
 displayCommunes();
+async function displayDepartements() {
+    let data = await getDepartements();
+    console.log(data);
+    for(const departement of data) {
+        const option = document.createElement("option");
+        option.innerText=departement.code + "-" + departement.nom;
+        option.value=departement.code;
+        HTML_departement.append(option);
+    }
+}
+
+displayDepartements();
+
+
+
 
     // .then((httpResponse) => httpResponse.json())
     // .then((data) => {

@@ -1,5 +1,6 @@
 const HTML_departement = document.getElementById('departement');
 const HTML_commune = document.getElementById('commune');
+const HTML_COMMUNE_EMPTY = HTML_commune.innerHTML;
 
 async function getAllCommunes() {
     let httpResponse = await fetch("https://geo.api.gouv.fr/communes", {method: 'GET'})
@@ -43,6 +44,7 @@ async function displayDepartements() {
         option.value=departement.code;
         HTML_departement.append(option);
     }
+    HTML_departement.value = "empty";
 }
 
 displayDepartements();
@@ -51,9 +53,9 @@ HTML_departement.addEventListener("change", displayCommunesOfDepartement)
 
 async function displayCommunesOfDepartement() {
     let codeDepartement = document.querySelector("#departement").value;
-    // console.log(codeDepartement);
+    console.log(codeDepartement);
     let data = await getCommunesOfDepartement(codeDepartement);
-    // console.log(data);
+    HTML_commune.innerHTML = HTML_COMMUNE_EMPTY;
     for(const commune of data) {
         const option = document.createElement("option");
         option.innerText= commune.nom;
@@ -65,8 +67,8 @@ async function displayCommunesOfDepartement() {
 
 async function getCommunesOfDepartement(codeDepartement) {
     const lien = `https://geo.api.gouv.fr/departements/${codeDepartement}/communes`
-    // console.log(lien)
     let httpResponse = await fetch(lien);
+
     if (httpResponse.status === 200 && httpResponse.ok) {
         return httpResponse.json();
     }

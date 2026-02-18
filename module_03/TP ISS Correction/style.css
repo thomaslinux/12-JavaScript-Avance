@@ -1,8 +1,11 @@
-#map { height: 480px; }
+#map {
+    height: 480px;
+}
 
 body {
+    color: white;
     font-family: Consolas;
     align-items: center;
     text-align: center;
-    background: src("astronaute.png");
+    background-image: url("assets/iss_back.jpg");
 }

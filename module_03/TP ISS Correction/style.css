@@ -1,0 +1,8 @@
+#map { height: 480px; }
+
+body {
+    font-family: Consolas;
+    align-items: center;
+    text-align: center;
+    background: src("astronaute.png");
+}

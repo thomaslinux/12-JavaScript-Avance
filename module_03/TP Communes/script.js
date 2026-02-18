@@ -1,6 +1,6 @@
 let characters = [];
 
-async function getCommunes() {
+async function getAllCommunes() {
     let httpResponse = await fetch("https://geo.api.gouv.fr/communes", {method: 'GET'})
 
     if(httpResponse.status === 200 && httpResponse.ok) {
@@ -10,8 +10,8 @@ async function getCommunes() {
     }
 }
 
-async function displayCommunes() {
-    let data = await getCommunes();
+async function displayAllCommunes() {
+    let data = await getAllCommunes();
     console.log(data);
     for(const communes of data) {
         const p = document.createElement("p");

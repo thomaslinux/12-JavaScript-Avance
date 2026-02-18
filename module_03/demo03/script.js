@@ -7,6 +7,9 @@ async function getHarryPotterData() {
 
 getHarryPotterData();
 
+async function getUser() {
+    return 'Michel';
+}
 
     // .then((httpResponse) => httpResponse.json())
     // .then((data) => {

@@ -1,6 +1,6 @@
 class Chocolate implements Variety {
 
-    public cacaoLvl : number
+    public cacaoLvl? : number
     public origin : string
 
     constructor(cacaoLvl : number, public color : string) {

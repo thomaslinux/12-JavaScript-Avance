@@ -31,7 +31,7 @@ async function getDepartements() {
 
 async function getCitiesByDep() {
 
-    const cities = await callApi(`${BASE_URL}/departements/${this.value}/communes`);
+    const cities = await callApi(`${BASE_URL}/departements/${this.value}/communes?fields=nom,code`);
 
     HTML_COMMUNE.innerHTML = HTML_COMMUNE_EMPTY;
 

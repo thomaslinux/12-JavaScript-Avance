@@ -23,3 +23,12 @@ console.log(firstname ?? 'Michel');
 let lastname : string | number
 lastname = 'Robot'
 lastname = 123
+
+let user = {
+    firstname : 'Michel',
+    address : {
+        street : "Rue des acacias"
+    }
+}
+
+console.log(user.address.street)

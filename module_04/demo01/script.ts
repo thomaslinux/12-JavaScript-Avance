@@ -19,3 +19,5 @@ console.log(hello("Michel"));
 let firstname : string = null;
 
 console.log(firstname ?? 'Michel');
+
+let lastname : string | number

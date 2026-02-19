@@ -7,7 +7,10 @@ class Chocolate implements Variety {
         this.cacaoLvl = cacaoLvl
     }
 
-    color2: { nuance: string; origin: string; };
+    color2: { nuance: string; origin: string; } = {
+        nuance : 'vert',
+        origin : 'Terre'
+    };
 
     name: string;
 
@@ -20,6 +23,7 @@ class Chocolate implements Variety {
 let choco = new Chocolate(90, 'black')
 choco.color = 'vert'
 choco.origin = 'Pérou'
+console.log(choco.color2.nuance)
 choco.display();
 
 interface Variety {

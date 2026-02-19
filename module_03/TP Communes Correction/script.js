@@ -31,8 +31,14 @@ async function getDepartements() {
 
 async function getCitiesByDep() {
 
-    const cities = await callApi(`${BASE_URL}/departement/${this.value}/commune`);
-    console.log(cities);
+    const cities = await callApi(`${BASE_URL}/departements/${this.value}/communes`);
+
+    cities.forEach(function(val) {
+        const option = document.createElement('option');
+        option.innerText = val.nom;
+        option.value = val.code;
+        HTML_commune.append(option);
+    });
 }
 
 function init() {

@@ -10,5 +10,5 @@ all = 'coucou'
 
 // fonctions
 function hello(name:string) : string {
-
+    return '';
 }

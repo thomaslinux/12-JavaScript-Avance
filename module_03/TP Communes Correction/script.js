@@ -29,18 +29,14 @@ async function getDepartements() {
     });
 }
 
-function getCitiesByDep() {
-    const codeDep = HTML_departement.value;
-    console.log(codeDep);
+async function getCitiesByDep() {
+
+    const cities = await callApi(`${BASE_URL}/departement/${this.value}/commune`)
 }
 
 function init() {
-
-
     getDepartements();
-
     HTML_departement.addEventListener('change', getCitiesByDep);
-
 }
 
-window.onload = init();
+window.onload = init;

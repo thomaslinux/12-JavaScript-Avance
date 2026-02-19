@@ -33,6 +33,8 @@ async function getCitiesByDep() {
 
     const cities = await callApi(`${BASE_URL}/departements/${this.value}/communes`);
 
+    HTML_commune.innerHTML = '';
+
     cities.forEach(function(val) {
         const option = document.createElement('option');
         option.innerText = val.nom;

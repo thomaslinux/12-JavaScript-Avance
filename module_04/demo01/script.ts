@@ -21,3 +21,5 @@ let firstname : string = null;
 console.log(firstname ?? 'Michel');
 
 let lastname : string | number
+lastname = 'Robot'
+lastname = 123

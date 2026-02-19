@@ -31,7 +31,8 @@ async function getDepartements() {
 
 async function getCitiesByDep() {
 
-    const cities = await callApi(`${BASE_URL}/departement/${this.value}/commune`)
+    const cities = await callApi(`${BASE_URL}/departement/${this.value}/commune`);
+    console.log(cities);
 }
 
 function init() {

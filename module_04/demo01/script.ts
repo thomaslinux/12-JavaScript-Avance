@@ -14,3 +14,6 @@ function hello(name:string) : string {
 }
 
 console.log(hello("Michel"));
+
+// nullité
+let firstname:string = null;

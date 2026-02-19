@@ -32,4 +32,5 @@ let user = {
     // }
 }
 
-console.log(user.address?.street ?? 'Rue des lilas');
+// console.log(user.address?.street ?? 'Rue des lilas');
+console.log(user.address!.street ?? 'Rue des lilas');

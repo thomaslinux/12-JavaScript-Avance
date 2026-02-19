@@ -43,9 +43,16 @@ async function getCitiesByDep() {
     });
 }
 
-function init() {
+async function getCityByCode() {
+    const city = await callApi(`${BASE_URL}/communes/${this.value}`);
+
+    console.log(city);
+}
+
+    function init() {
     getDepartements();
     HTML_departement.addEventListener('change', getCitiesByDep);
+    HTML_commune.addEventListener('change', getCityByCode);
 }
 
 window.onload = init;

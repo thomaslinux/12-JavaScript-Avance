@@ -12,7 +12,7 @@ class Chocolate implements Variety {
         origin : 'Terre'
     };
 
-    name: string;
+    name: string = "";
 
     display() {
         console.log(`${this.cacaoLvl}% , Couleur : ${this.color}, Origin : ${this.origin}`);

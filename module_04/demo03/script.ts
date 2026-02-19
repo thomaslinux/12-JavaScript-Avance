@@ -1,4 +1,5 @@
 class Chocolate {
+
     public cacaoLvl : number
     public origin : string
 
@@ -7,9 +8,20 @@ class Chocolate {
     }
 
     display() {
-
+        console.log(`${this.cacaoLvl}% , Couleur : ${this.color}, Origin : ${this.origin}`);
     }
 
 }
 
 let choco = new Chocolate(90, 'black')
+choco.color = 'vert'
+choco.origin = 'Pérou'
+choco.display();
+
+interface Variety {
+    name : string
+    color : {
+        nuance : string
+        origin : string
+    }
+}

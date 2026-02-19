@@ -1,4 +1,4 @@
-class Chocolate {
+class Chocolate implements Variety {
 
     public cacaoLvl : number
     public origin : string
@@ -6,6 +6,10 @@ class Chocolate {
     constructor(cacaoLvl : number, public color : string) {
         this.cacaoLvl = cacaoLvl
     }
+
+    color2: { nuance: string; origin: string; };
+
+    name: string;
 
     display() {
         console.log(`${this.cacaoLvl}% , Couleur : ${this.color}, Origin : ${this.origin}`);
@@ -20,7 +24,7 @@ choco.display();
 
 interface Variety {
     name : string
-    color : {
+    color2 : {
         nuance : string
         origin : string
     }
@@ -28,7 +32,7 @@ interface Variety {
 
 let crunch : Variety = {
     name : "Crunch",
-    color : {
+    color2 : {
         nuance : 'Marron bleu clair',
         origin : 'Eurasien'
     }

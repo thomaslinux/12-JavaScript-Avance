@@ -47,6 +47,11 @@ async function getCityByCode() {
     const city = await callApi(`${BASE_URL}/communes/${this.value}`);
 
     console.log(city);
+
+    let p = document.createElement('p');
+    p.innerText = `Nom : ${city.nom}, Population : ${city.population}, CP : ${city.codesPostaux.join('-')}`
+
+    document.body.append(p);
 }
 
     function init() {

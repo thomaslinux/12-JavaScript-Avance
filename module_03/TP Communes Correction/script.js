@@ -1,6 +1,6 @@
 const HTML_departement = document.getElementById('departement');
 const HTML_commune = document.getElementById('commune');
-const HTML_COMMUNE_EMPTY = HTML_commune.innerHTML;
+const HTML_commune_EMPTY = HTML_commune.innerHTML;
 const HTML_info_communes = document.getElementById("info_communes");
 let listes_communes = [];
 
@@ -33,7 +33,7 @@ async function getCitiesByDep() {
 
     const cities = await callApi(`${BASE_URL}/departements/${this.value}/communes`);
 
-    HTML_commune.innerHTML = '';
+    HTML_commune.innerHTML = HTML_commune_EMPTY;
 
     cities.forEach(function(val) {
         const option = document.createElement('option');

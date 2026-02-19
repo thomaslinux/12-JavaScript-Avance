@@ -25,3 +25,11 @@ interface Variety {
         origin : string
     }
 }
+
+let crunch : Variety = {
+    name : "Crunch",
+    color : {
+        nuance : 'Marron bleu clair',
+        origin : 'Eurasien'
+    }
+}

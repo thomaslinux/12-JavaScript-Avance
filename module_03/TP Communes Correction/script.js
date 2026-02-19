@@ -18,7 +18,7 @@ async function callApi(url) {
 
 async function getDepartements() {
 
-    const departements = await callApi(`${BASE_URL}/departements`);
+    const departements = await callApi(`${BASE_URL}/departements?fields=nom,code`);
 
     departements.forEach(function (val) {
         const option = document.createElement('option');
@@ -44,7 +44,7 @@ async function getCitiesByDep() {
 }
 
 async function getCityByCode() {
-    const city = await callApi(`${BASE_URL}/communes/${this.value}`);
+    const city = await callApi(`${BASE_URL}/communes/${this.value}?fields=nom,population,codesPostaux`);
 
     console.log(city);
 

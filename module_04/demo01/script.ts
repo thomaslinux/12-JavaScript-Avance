@@ -26,11 +26,11 @@ lastname = 123
 
 let user = {
     firstname : 'Michel',
-    address: null
-    // address : {
-    //     street : "Rue des acacias"
-    // }
+    // address: null
+    address : {
+        street : "Rue des acacias"
+    }
 }
 
-// console.log(user.address?.street ?? 'Rue des lilas');
-console.log(user.address!.street ?? 'Rue des lilas');
+console.log(user.address?.street ?? 'Rue des lilas');
+console.log(user.address!.street);

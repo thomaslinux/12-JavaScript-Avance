@@ -10,5 +10,7 @@ all = 'coucou'
 
 // fonctions
 function hello(name:string) : string {
-    return '';
+    return `Hello ${name} !`;
 }
+
+console.log(hello("Michel"));

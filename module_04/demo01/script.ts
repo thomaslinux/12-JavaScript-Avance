@@ -7,3 +7,8 @@ let message = "coucou"
 
 let all : any = 12;
 all = 'coucou'
+
+// fonctions
+function hello(name:string) : string {
+
+}

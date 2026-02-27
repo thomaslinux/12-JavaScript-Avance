@@ -13,11 +13,9 @@ async function getRepositoryData() {
 async function displayRepositoryData() {
     let data = await getRepositoryData();
 
-    // document.body.innerText = data.json();
-    console.log(data);
-
     for(const element of data.tree) {
-        if (element.path.contains("index.html")) {
+        // if (element.path.includes("index.html")) {
+            console.log(typeof element.path)
 
             const a = document.createElement("a");
             a.innerText = element.path;
@@ -27,9 +25,9 @@ async function displayRepositoryData() {
             
             div.append(a);
             document.body.main.append(div);
-        }
+        // }
     }
-    document.body.footer.innerText += "JS 2025.02.27.23.45"
+    document.body.footer.innerText += "JS 2025.02.27.23.49"
 
 }
 

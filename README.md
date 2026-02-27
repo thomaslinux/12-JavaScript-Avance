@@ -1,4 +1,6 @@
-# Sites web rendus dynamiquement par du javascript faisant appel à des API REST
+# Repo pour JavaScript avancé 
+
+Sites web rendus dynamiquement par du javascript faisant appel à des API REST.
 
 ## Liste des personnages de Harry Potter
 
@@ -36,3 +38,6 @@ https://github.com/thomaslinux/12-JavaScript-Avance/tree/master/module_03/TP%20I
 
 - [ ] GitHub pages that uses GitHub api or else to list all pages from the repository and ads a href accordingly
 
+  lien vers l'appel GitHub API qui liste tous les fichiers du repo :
+
+  https://api.github.com/repos/thomaslinux/12-JavaScript-Avance/git/trees/master?recursive=1

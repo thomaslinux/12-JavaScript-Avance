@@ -6,13 +6,13 @@
 
 https://raw.githack.com/thomaslinux/12-JavaScript-Avance/refs/heads/master/module_03/demo03/index.html
 
-** Source : **
+**Source : **
 
 https://github.com/thomaslinux/12-JavaScript-Avance/blob/master/module_03/demo03/index.html
 
 ## Liste des départements puis des communes du département dans un menu déroulant
 
-** Affichage démo : **
+**Affichage démo : **
 
 https://raw.githack.com/thomaslinux/12-JavaScript-Avance/refs/heads/master/module_03/TP%20Communes/index.html
 
@@ -22,11 +22,11 @@ https://github.com/thomaslinux/12-JavaScript-Avance/blob/master/module_03/TP%20C
 
 ## Correspondance des coordonnées GPS du satellite ISS sur le planisfère terrestre openstreetmap :
 
-** Affichage démo : **
+**Affichage démo : **
 
 https://raw.githack.com/thomaslinux/12-JavaScript-Avance/refs/heads/master/module_03/TP%20ISS/index.html
 
-** Source : **
+**Source : **
 
 https://github.com/thomaslinux/12-JavaScript-Avance/tree/master/module_03/TP%20ISS/index.html
 

@@ -12,7 +12,7 @@ async function displayRepositoryData() {
     let data = await getRepositoryData();
 
     for(const element of data.tree) {
-        // if (element.path.includes("index.html")) {
+        if (element.path && element.path.includes("index.html")) {
             console.log(typeof element.path)
 
             const a = document.createElement("a");
@@ -23,9 +23,9 @@ async function displayRepositoryData() {
             
             div.append(a);
             document.querySelector("main").append(div);
-        // }
+        }
     }
-    document.querySelector("footer").innerText += "JS 2025.02.27.23.52"
+    document.querySelector("footer").innerText += " JS 2025.02.27.23.52"
 
 }
 

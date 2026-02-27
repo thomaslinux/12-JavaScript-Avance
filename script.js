@@ -13,8 +13,8 @@ async function getRepositoryData() {
 async function displayRepositoryData() {
     let data = await getRepositoryData();
 
-    document.body.innerText = data.json();
-    // console.log(data);
+    // document.body.innerText = data.json();
+    console.log(data);
 
     // for(const character of data) {
     //     const p = document.createElement("p");

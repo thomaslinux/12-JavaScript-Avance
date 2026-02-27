@@ -16,25 +16,15 @@ async function displayRepositoryData() {
     // document.body.innerText = data.json();
     console.log(data);
 
-    // for(const character of data) {
-    //     const p = document.createElement("p");
-    //     p.innerText = character.name;
-    //     const img = document.createElement("img");
-    //     if (character.image) {
-    //         img.src = character.image;
-    //     }
-    //     // else {
-    //     //     img.src = "https://http.cat/images/404.jpg"
-    //     // }
-    //         img.alt = "image de " + character.name
+    for(const element of data.tree) {
+        const p = document.createElement("p");
+        p.innerText = element.path;
+        const div = document.createElement("div");
+        div.id = element.path;
 
-    //     const div = document.createElement("div");
-    //     div.id = character.name;
-
-    //     div.append(p);
-    //     div.append(img);
-    //     document.body.append(div);
-    // }
+        div.append(p);
+        document.body.append(div);
+    }
 
 }
 

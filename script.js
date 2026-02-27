@@ -17,13 +17,17 @@ async function displayRepositoryData() {
     console.log(data);
 
     for(const element of data.tree) {
-        const p = document.createElement("p");
-        p.innerText = element.path;
-        const div = document.createElement("div");
-        div.id = element.path;
+        if (element.path.contains("index.html")) {
 
-        div.append(p);
-        document.body.append(div);
+            const a = document.createElement("a");
+            a.innerText = element.path;
+            a.href = element.path;
+            const div = document.createElement("div");
+            div.id = element.path;
+            
+            div.append(a);
+            document.body.main.append(div);
+        }
     }
 
 }

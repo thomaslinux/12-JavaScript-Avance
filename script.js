@@ -29,6 +29,7 @@ async function displayRepositoryData() {
             document.body.main.append(div);
         }
     }
+    document.body.footer.innerText += "JS 2025.02.27.23.45"
 
 }
 

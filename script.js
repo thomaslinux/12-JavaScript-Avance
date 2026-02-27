@@ -1,5 +1,3 @@
-let characters = [];
-
 async function getRepositoryData() {
     let httpResponse = await fetch("https://api.github.com/repos/thomaslinux/12-JavaScript-Avance/git/trees/master?recursive=1", {method: 'GET'})
 
@@ -24,10 +22,10 @@ async function displayRepositoryData() {
             div.id = element.path;
             
             div.append(a);
-            document.body.main.append(div);
+            document.querySelector("main").append(div);
         // }
     }
-    document.body.footer.innerText += "JS 2025.02.27.23.49"
+    document.querySelector("footer").innerText += "JS 2025.02.27.23.52"
 
 }
 

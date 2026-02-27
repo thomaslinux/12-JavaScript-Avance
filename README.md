@@ -2,6 +2,10 @@
 
 Sites web rendus dynamiquement par du javascript faisant appel à des API REST.
 
+**Listes des sites du module_3 :**
+
+https://raw.githack.com/thomaslinux/12-JavaScript-Avance/refs/heads/master/index.html
+
 ## Liste des personnages de Harry Potter
 
 **Affichage démo :**

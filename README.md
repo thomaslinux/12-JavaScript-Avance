@@ -1,15 +1,37 @@
-# Repository for script related to the JavaScript-Avance module
+# Sites web rendus dynamiquement par du javascript faisant appel à des API REST
 
-To view a webpage, modify the link according to the desired ressource :
+## Liste des personnages de Harry Potter
 
-# Liste des personnages de Harry Potter
+**Affichage démo :**
 
 https://raw.githack.com/thomaslinux/12-JavaScript-Avance/refs/heads/master/module_03/demo03/index.html
 
-# Liste des départements puis des communes du département dans un menu déroulant
+** Source : **
+
+https://github.com/thomaslinux/12-JavaScript-Avance/blob/master/module_03/demo03/index.html
+
+## Liste des départements puis des communes du département dans un menu déroulant
+
+** Affichage démo : **
 
 https://raw.githack.com/thomaslinux/12-JavaScript-Avance/refs/heads/master/module_03/TP%20Communes/index.html
+
+**Source : **
+
+https://github.com/thomaslinux/12-JavaScript-Avance/blob/master/module_03/TP%20Communes/index.html
+
+## Correspondance des coordonnées GPS du satellite ISS sur le planisfère terrestre openstreetmap :
+
+** Affichage démo : **
+
+https://raw.githack.com/thomaslinux/12-JavaScript-Avance/refs/heads/master/module_03/TP%20ISS/index.html
+
+** Source : **
+
+https://github.com/thomaslinux/12-JavaScript-Avance/tree/master/module_03/TP%20ISS/index.html
 
 # TODO
 
 - [ ] GitHub pages that uses GitHub api or else to list all pages from the repository and ads a href accordingly
+
+- [ ] modifier la logique then en await async sur le TP ISS pour respecter les standards modernes

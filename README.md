@@ -2,7 +2,9 @@
 
 Sites web rendus dynamiquement par du javascript faisant appel à des API REST.
 
-**Listes des sites du module_3 :**
+**Listes des index du repo :**
+
+https://thomaslinux.github.io/12-JavaScript-Avance/
 
 https://raw.githack.com/thomaslinux/12-JavaScript-Avance/refs/heads/master/index.html
 
